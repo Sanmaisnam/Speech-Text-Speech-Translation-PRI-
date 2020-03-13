@@ -6,15 +6,15 @@ import urllib
 import ssl
 
 #here, we pass the certifi certificates into the urlopen method to avoid errors of no certifications
-def uo(args, **kwargs):
+def link(args, **kwargs):
     # We create an ssl context to fetch the certificate provided by the local server without performing validation of
     # the certificate
     ssl_context = ssl.create_default_context(cafile=certifi.where())
     return urllib.request.urlopen(args, context=ssl_context)
 
 geolocator = Nominatim(user_agent="Golf Caddie App")
-#print(uo)
-geolocator.urlopen = uo
+#print(link)
+geolocator.urlopen = link
 
 location1 = geolocator.geocode(input("Enter your current location address (Where is the ball?):"))
 print("Point A: ", location1.address)
