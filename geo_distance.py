@@ -1,9 +1,10 @@
 from geopy.geocoders import Nominatim
 from geopy.distance import distance
 
-import certifi
-import urllib
-import ssl
+import certifi  # Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness 
+                # of SSL certificates while verifying the identity of TLS hosts 
+import urllib   #urllib is a package that collects several modules for working with URLs
+import ssl      #This module provides some more Pythonic support for SSL
 
 #here, we pass the certifi certificates into the urlopen method to avoid errors of no certifications
 def link(args, **kwargs):
