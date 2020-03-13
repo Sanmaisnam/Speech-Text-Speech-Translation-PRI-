@@ -13,7 +13,7 @@ def uo(args, **kwargs):
     return urllib.request.urlopen(args, context=ssl_context)
 
 geolocator = Nominatim(user_agent="Golf Caddie App")
-print(uo)
+#print(uo)
 geolocator.urlopen = uo
 
 location1 = geolocator.geocode(input("Enter your current location address (Where is the ball?):"))
@@ -31,14 +31,3 @@ d = distance(location1_coord, location2_coord)
 
 print("Your distance is: ", d)
 
-
-'''
-Refs:
-1. https://stackoverflow.com/questions/25888396/how-to-get-latitude-longitude-with-python
-2. https://janakiev.com/blog/gps-points-distance-python/ 
-3. https://pypi.org/project/geopy/ 
-4. https://github.com/geopy/geopy/issues/124
-5. urllib.request — Extensible library for opening URLs (Documentation):
-    https://docs.python.org/3/library/urllib.request.html 
-6. https://bugs.python.org/issue28022 
-'''
